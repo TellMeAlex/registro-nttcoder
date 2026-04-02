@@ -1,0 +1,17 @@
+{
+  "name": "code-philosophy",
+  "versions": {
+    "1.0.0": {
+      "name": "code-philosophy",
+      "type": "skill",
+      "description": "Core coding principles and philosophy",
+      "files": [
+        "skills/code-philosophy/SKILL.md"
+      ],
+      "dependencies": []
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

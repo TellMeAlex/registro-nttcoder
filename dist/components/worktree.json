@@ -1,0 +1,22 @@
+{
+  "name": "worktree",
+  "versions": {
+    "1.0.0": {
+      "name": "worktree",
+      "type": "plugin",
+      "description": "Git worktree management for OpenCode",
+      "files": [
+        "plugins/worktree.ts",
+        "plugins/worktree/state.ts",
+        "plugins/worktree/terminal.ts",
+        "plugins/worktree/launch-context.ts"
+      ],
+      "dependencies": [
+        "nttcoder-primitives"
+      ]
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

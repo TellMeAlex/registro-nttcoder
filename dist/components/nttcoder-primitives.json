@@ -1,0 +1,25 @@
+{
+  "name": "nttcoder-primitives",
+  "versions": {
+    "1.0.0": {
+      "name": "nttcoder-primitives",
+      "type": "plugin",
+      "description": "Core utilities and primitives for NTTCoder plugins",
+      "files": [
+        "plugins/nttcoder-primitives/get-project-id.ts",
+        "plugins/nttcoder-primitives/with-timeout.ts",
+        "plugins/nttcoder-primitives/log-warn.ts",
+        "plugins/nttcoder-primitives/types.ts",
+        "plugins/nttcoder-primitives/mutex.ts",
+        "plugins/nttcoder-primitives/shell.ts",
+        "plugins/nttcoder-primitives/temp.ts",
+        "plugins/nttcoder-primitives/terminal-detect.ts",
+        "plugins/nttcoder-primitives/index.ts"
+      ],
+      "dependencies": []
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "frontend-philosophy",
+  "versions": {
+    "1.0.0": {
+      "name": "frontend-philosophy",
+      "type": "skill",
+      "description": "Frontend development principles and best practices",
+      "files": [
+        "skills/frontend-philosophy/SKILL.md"
+      ],
+      "dependencies": []
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

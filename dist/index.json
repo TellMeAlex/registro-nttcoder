@@ -1,0 +1,95 @@
+{
+  "$schema": "https://ocx.kdco.dev/schemas/v2/registry.json",
+  "name": "Nttcoder",
+  "version": "0.0.1",
+  "author": "TellMeAlex",
+  "opencode": "1.1.0",
+  "ocx": "1.0.16",
+  "components": [
+    {
+      "name": "workspace-plugin",
+      "type": "plugin",
+      "description": "Core workspace functionality for OpenCode"
+    },
+    {
+      "name": "background-agents",
+      "type": "plugin",
+      "description": "Run AI agents in the background"
+    },
+    {
+      "name": "notify",
+      "type": "plugin",
+      "description": "Cross-platform desktop notifications for OpenCode"
+    },
+    {
+      "name": "worktree",
+      "type": "plugin",
+      "description": "Git worktree management for OpenCode"
+    },
+    {
+      "name": "nttcoder-primitives",
+      "type": "plugin",
+      "description": "Core utilities and primitives for NTTCoder plugins"
+    },
+    {
+      "name": "coder",
+      "type": "agent",
+      "description": "Full-access coding agent with bash and edit permissions"
+    },
+    {
+      "name": "researcher",
+      "type": "agent",
+      "description": "Research-focused agent with read-only access and MCP servers"
+    },
+    {
+      "name": "scribe",
+      "type": "agent",
+      "description": "Documentation agent with edit permissions for markdown files"
+    },
+    {
+      "name": "reviewer",
+      "type": "agent",
+      "description": "Code review agent with read-only access"
+    },
+    {
+      "name": "code-philosophy",
+      "type": "skill",
+      "description": "Core coding principles and philosophy"
+    },
+    {
+      "name": "frontend-philosophy",
+      "type": "skill",
+      "description": "Frontend development principles and best practices"
+    },
+    {
+      "name": "code-review",
+      "type": "skill",
+      "description": "Systematic code review methodology"
+    },
+    {
+      "name": "plan-protocol",
+      "type": "skill",
+      "description": "Planning and task breakdown protocol"
+    },
+    {
+      "name": "plan-review",
+      "type": "skill",
+      "description": "Plan review and validation methodology"
+    },
+    {
+      "name": "review",
+      "type": "command",
+      "description": "Trigger code review with the reviewer agent"
+    },
+    {
+      "name": "philosophy",
+      "type": "bundle",
+      "description": "Complete philosophy bundle with tools"
+    },
+    {
+      "name": "workspace",
+      "type": "bundle",
+      "description": "Complete workspace setup with agents and plugins"
+    }
+  ]
+}

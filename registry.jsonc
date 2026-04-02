@@ -1,0 +1,266 @@
+{
+	// OCX Registry Starter Template
+	// Use this as a starting point for creating your own component registry
+	//
+	// Schema reference: https://ocx.kdco.dev/schemas/v2/registry.json
+	// Documentation: https://github.com/kdcokenny/ocx
+
+	"$schema": "https://ocx.kdco.dev/schemas/v2/registry.json",
+	"name": "Nttcoder",
+	// Registry refs use the alias chosen by users via:
+	// ocx registry add <url> --name <alias>
+	"version": "0.0.1",
+	"author": "TellMeAlex",
+
+	// Compatibility versions
+	"opencode": "1.1.0", // Minimum OpenCode version required
+	"ocx": "1.0.16", // Minimum OCX CLI version required
+
+	"components": [
+		// Plugins
+		{
+			"name": "workspace-plugin",
+			"type": "plugin",
+			"description": "Core workspace functionality for OpenCode",
+			"files": ["plugins/workspace-plugin.ts"]
+		},
+		{
+			"name": "background-agents",
+			"type": "plugin",
+			"description": "Run AI agents in the background",
+			"files": ["plugins/background-agents.ts"],
+			"dependencies": ["nttcoder-primitives"],
+			"npm": {
+				"devDependencies": {
+					"unique-names-generator": "4.7.1"
+				}
+			}
+		},
+		{
+			"name": "notify",
+			"type": "plugin",
+			"description": "Cross-platform desktop notifications for OpenCode",
+			"files": [
+				"plugins/notify.ts",
+				"plugins/notify/backend.ts",
+				"plugins/notify/cmux.ts"
+			],
+			"dependencies": ["nttcoder-primitives"],
+			"npm": {
+				"devDependencies": {
+					"node-notifier": "10.0.1",
+					"detect-terminal": "2.0.0"
+				}
+			}
+		},
+		{
+			"name": "worktree",
+			"type": "plugin",
+			"description": "Git worktree management for OpenCode",
+			"files": [
+				"plugins/worktree.ts",
+				"plugins/worktree/state.ts",
+				"plugins/worktree/terminal.ts",
+				"plugins/worktree/launch-context.ts"
+			],
+			"dependencies": ["nttcoder-primitives"],
+			"npm": {
+				"devDependencies": {
+					"zod": "4.3.5",
+					"jsonc-parser": "3.3.1"
+				}
+			}
+		},
+		{
+			"name": "nttcoder-primitives",
+			"type": "plugin",
+			"description": "Core utilities and primitives for NTTCoder plugins",
+			"files": [
+				"plugins/nttcoder-primitives/get-project-id.ts",
+				"plugins/nttcoder-primitives/with-timeout.ts",
+				"plugins/nttcoder-primitives/log-warn.ts",
+				"plugins/nttcoder-primitives/types.ts",
+				"plugins/nttcoder-primitives/mutex.ts",
+				"plugins/nttcoder-primitives/shell.ts",
+				"plugins/nttcoder-primitives/temp.ts",
+				"plugins/nttcoder-primitives/terminal-detect.ts",
+				"plugins/nttcoder-primitives/index.ts"
+			]
+		},
+
+		// Agents
+		{
+			"name": "coder",
+			"type": "agent",
+			"description": "Full-access coding agent with bash and edit permissions",
+			"files": ["agents/coder.md"],
+			"opencode": {
+				"permission": {
+					"bash": {
+						"*": "allow"
+					},
+					"edit": {
+						"*": "allow"
+					}
+				}
+			}
+		},
+		{
+			"name": "researcher",
+			"type": "agent",
+			"description": "Research-focused agent with read-only access and MCP servers",
+			"files": ["agents/researcher.md"],
+			"opencode": {
+				"mcp": {
+					"context7": {
+						"type": "remote",
+						"url": "https://mcp-context7.onrender.com/sse"
+					},
+					"exa": {
+						"type": "remote",
+						"url": "https://mcp-exa.onrender.com/sse"
+					},
+					"gh_grep": {
+						"type": "remote",
+						"url": "https://mcp-gh-grep.onrender.com/sse"
+					}
+				},
+				"permission": {
+					"*": "deny"
+				}
+			}
+		},
+		{
+			"name": "scribe",
+			"type": "agent",
+			"description": "Documentation agent with edit permissions for markdown files",
+			"files": ["agents/scribe.md"],
+			"opencode": {
+				"permission": {
+					"edit": {
+						"**/*.md": "allow",
+						"*": "deny"
+					}
+				}
+			}
+		},
+		{
+			"name": "reviewer",
+			"type": "agent",
+			"description": "Code review agent with read-only access",
+			"files": ["agents/reviewer.md"],
+			"dependencies": ["plan-review"],
+			"opencode": {
+				"permission": {
+					"*": "deny"
+				}
+			}
+		},
+
+		// Skills
+		{
+			"name": "code-philosophy",
+			"type": "skill",
+			"description": "Core coding principles and philosophy",
+			"files": ["skills/code-philosophy/SKILL.md"]
+		},
+		{
+			"name": "frontend-philosophy",
+			"type": "skill",
+			"description": "Frontend development principles and best practices",
+			"files": ["skills/frontend-philosophy/SKILL.md"]
+		},
+		{
+			"name": "code-review",
+			"type": "skill",
+			"description": "Systematic code review methodology",
+			"files": ["skills/code-review/SKILL.md"]
+		},
+		{
+			"name": "plan-protocol",
+			"type": "skill",
+			"description": "Planning and task breakdown protocol",
+			"files": ["skills/plan-protocol/SKILL.md"]
+		},
+		{
+			"name": "plan-review",
+			"type": "skill",
+			"description": "Plan review and validation methodology",
+			"files": ["skills/plan-review/SKILL.md"]
+		},
+
+		// Commands
+		{
+			"name": "review",
+			"type": "command",
+			"description": "Trigger code review with the reviewer agent",
+			"files": ["commands/review.md"]
+		},
+
+		// Bundles
+		{
+			"name": "philosophy",
+			"type": "bundle",
+			"description": "Complete philosophy bundle with tools",
+			"dependencies": ["code-philosophy", "frontend-philosophy"],
+			"files": ["tools/philosophy.md"]
+		},
+		{
+			"name": "workspace",
+			"type": "bundle",
+			"description": "Complete workspace setup with agents and plugins",
+			"dependencies": [
+				"workspace-plugin",
+				"background-agents",
+				"notify",
+				"worktree",
+				"nttcoder-primitives",
+				"code-philosophy",
+				"frontend-philosophy",
+				"code-review",
+				"plan-protocol",
+				"review"
+			],
+			"npm": {
+				"devDependencies": {
+					"zod": "4.3.5",
+					"@tarquinen/opencode-dcp": "3.1.3",
+					"@franlol/opencode-md-table-formatter": "0.0.6"
+				}
+			},
+			"opencode": {
+				"agents": {
+					"plan": {
+						"prompt": "You are a planning specialist. Break down complex features into actionable tasks using the plan-protocol skill. Create clear, testable acceptance criteria for each task.",
+						"tools": {
+							"*": false,
+							"Read": true,
+							"Glob": true,
+							"Grep": true
+						}
+					},
+					"build": {
+						"prompt": "You are a build and deployment specialist. Focus on build configurations, CI/CD pipelines, and deployment processes. You can read files and run build commands but cannot edit source code.",
+						"tools": {
+							"*": false,
+							"Read": true,
+							"Bash": true,
+							"Glob": true,
+							"Grep": true
+						}
+					},
+					"explore": {
+						"prompt": "You are a codebase explorer. Help users understand code structure, find relevant files, and trace dependencies. You have read-only access to explore the codebase.",
+						"tools": {
+							"*": false,
+							"Read": true,
+							"Glob": true,
+							"Grep": true,
+							"Task": true
+						}
+					}
+				}
+			}
+		}
+	]
+}

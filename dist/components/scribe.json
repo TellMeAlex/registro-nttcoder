@@ -1,0 +1,25 @@
+{
+  "name": "scribe",
+  "versions": {
+    "1.0.0": {
+      "name": "scribe",
+      "type": "agent",
+      "description": "Documentation agent with edit permissions for markdown files",
+      "files": [
+        "agents/scribe.md"
+      ],
+      "dependencies": [],
+      "opencode": {
+        "permission": {
+          "edit": {
+            "**/*.md": "allow",
+            "*": "deny"
+          }
+        }
+      }
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

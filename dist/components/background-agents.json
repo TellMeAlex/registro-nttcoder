@@ -1,0 +1,19 @@
+{
+  "name": "background-agents",
+  "versions": {
+    "1.0.0": {
+      "name": "background-agents",
+      "type": "plugin",
+      "description": "Run AI agents in the background",
+      "files": [
+        "plugins/background-agents.ts"
+      ],
+      "dependencies": [
+        "nttcoder-primitives"
+      ]
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "plan-protocol",
+  "versions": {
+    "1.0.0": {
+      "name": "plan-protocol",
+      "type": "skill",
+      "description": "Planning and task breakdown protocol",
+      "files": [
+        "skills/plan-protocol/SKILL.md"
+      ],
+      "dependencies": []
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

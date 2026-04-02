@@ -1,0 +1,17 @@
+{
+  "name": "plan-review",
+  "versions": {
+    "1.0.0": {
+      "name": "plan-review",
+      "type": "skill",
+      "description": "Plan review and validation methodology",
+      "files": [
+        "skills/plan-review/SKILL.md"
+      ],
+      "dependencies": []
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

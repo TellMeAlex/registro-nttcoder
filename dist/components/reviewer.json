@@ -1,0 +1,24 @@
+{
+  "name": "reviewer",
+  "versions": {
+    "1.0.0": {
+      "name": "reviewer",
+      "type": "agent",
+      "description": "Code review agent with read-only access",
+      "files": [
+        "agents/reviewer.md"
+      ],
+      "dependencies": [
+        "plan-review"
+      ],
+      "opencode": {
+        "permission": {
+          "*": "deny"
+        }
+      }
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

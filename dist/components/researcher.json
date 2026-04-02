@@ -1,0 +1,39 @@
+{
+  "name": "researcher",
+  "versions": {
+    "1.0.0": {
+      "name": "researcher",
+      "type": "agent",
+      "description": "Research-focused agent with read-only access and MCP servers",
+      "files": [
+        "agents/researcher.md"
+      ],
+      "dependencies": [],
+      "opencode": {
+        "mcp": {
+          "context7": {
+            "type": "remote",
+            "url": "https://mcp-context7.onrender.com/sse",
+            "enabled": true
+          },
+          "exa": {
+            "type": "remote",
+            "url": "https://mcp-exa.onrender.com/sse",
+            "enabled": true
+          },
+          "gh_grep": {
+            "type": "remote",
+            "url": "https://mcp-gh-grep.onrender.com/sse",
+            "enabled": true
+          }
+        },
+        "permission": {
+          "*": "deny"
+        }
+      }
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

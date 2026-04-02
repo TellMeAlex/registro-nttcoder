@@ -1,0 +1,17 @@
+{
+  "name": "workspace-plugin",
+  "versions": {
+    "1.0.0": {
+      "name": "workspace-plugin",
+      "type": "plugin",
+      "description": "Core workspace functionality for OpenCode",
+      "files": [
+        "plugins/workspace-plugin.ts"
+      ],
+      "dependencies": []
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

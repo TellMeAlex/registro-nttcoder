@@ -1,0 +1,21 @@
+{
+  "name": "notify",
+  "versions": {
+    "1.0.0": {
+      "name": "notify",
+      "type": "plugin",
+      "description": "Cross-platform desktop notifications for OpenCode",
+      "files": [
+        "plugins/notify.ts",
+        "plugins/notify/backend.ts",
+        "plugins/notify/cmux.ts"
+      ],
+      "dependencies": [
+        "nttcoder-primitives"
+      ]
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

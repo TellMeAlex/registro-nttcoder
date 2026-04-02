@@ -1,0 +1,27 @@
+{
+  "name": "workspace",
+  "versions": {
+    "1.0.0": {
+      "name": "workspace",
+      "type": "bundle",
+      "description": "Complete workspace setup with agents and plugins",
+      "files": [],
+      "dependencies": [
+        "workspace-plugin",
+        "background-agents",
+        "notify",
+        "worktree",
+        "nttcoder-primitives",
+        "code-philosophy",
+        "frontend-philosophy",
+        "code-review",
+        "plan-protocol",
+        "review"
+      ],
+      "opencode": {}
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

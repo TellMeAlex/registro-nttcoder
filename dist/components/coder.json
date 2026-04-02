@@ -1,0 +1,27 @@
+{
+  "name": "coder",
+  "versions": {
+    "1.0.0": {
+      "name": "coder",
+      "type": "agent",
+      "description": "Full-access coding agent with bash and edit permissions",
+      "files": [
+        "agents/coder.md"
+      ],
+      "dependencies": [],
+      "opencode": {
+        "permission": {
+          "bash": {
+            "*": "allow"
+          },
+          "edit": {
+            "*": "allow"
+          }
+        }
+      }
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}

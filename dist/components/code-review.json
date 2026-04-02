@@ -1,0 +1,17 @@
+{
+  "name": "code-review",
+  "versions": {
+    "1.0.0": {
+      "name": "code-review",
+      "type": "skill",
+      "description": "Systematic code review methodology",
+      "files": [
+        "skills/code-review/SKILL.md"
+      ],
+      "dependencies": []
+    }
+  },
+  "dist-tags": {
+    "latest": "1.0.0"
+  }
+}
