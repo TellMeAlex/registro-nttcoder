@@ -1,0 +1,23 @@
+.npmrc
+  94a91efb933b6536 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.5",
+  "base_commit_sha": "cb7aad8b2affc2f58d6984b6e84d28e79acd0c31",
+  "prompts": {
+    "94a91efb933b6536": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_2afbeb110ffexARrnkf5RqVi7K",
+        "model": "axet/aws-anthropic/eu.anthropic.claude-sonnet-4-5-20250929-v1:0"
+      },
+      "human_author": "Alejandro de la Fuente de la Rosa",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 0,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
